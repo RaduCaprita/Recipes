@@ -7,7 +7,7 @@ import org.json.simple.parser.*;
 
 public class ProductDataParser {
 
-    Nutrition createNutritionObject(JSONObject object){
+    private Nutrition createNutritionObject(JSONObject object){
         Nutrition nutrition = new Nutrition();
         int calories = ((Long) object.get("calories")).intValue();
         String fat = (String) object.get("fat");
@@ -20,7 +20,7 @@ public class ProductDataParser {
         return nutrition;
     }
 
-    ProductData createProductDataObject(JSONObject object) {
+    private ProductData createProductDataObject(JSONObject object) {
         ProductData product = new ProductData();
         int id = ((Long) object.get("id")).intValue();
         String title = (String) object.get("title");
@@ -68,7 +68,7 @@ public class ProductDataParser {
         return product;
     }
 
-    List<ProductData> getProductData() {
+    public List<ProductData> getProductData() {
         JSONParser parser = new JSONParser();
         List<ProductData> products = new ArrayList<>();
         try {
