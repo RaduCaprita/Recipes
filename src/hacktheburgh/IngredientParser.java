@@ -9,7 +9,7 @@ public class IngredientParser {
     private final Pattern ingredientPattern;
 
     public IngredientParser() {
-        ingredientPattern = Pattern.compile("(\\d+(?:ml|g|\\stsp|\\stbsp|\\sjar|\\sbunch|\\ssticks)?)\\s(.*)");
+        ingredientPattern = Pattern.compile("(\\d+(?:ml|g|\\stsp|\\stbsp|\\sjar|\\sbunch|\\ssticks)?)\\s((?!boiling water?).*)");
     }
 
     public List<String[]> parseIngredients(List<String> ingredientList) {
